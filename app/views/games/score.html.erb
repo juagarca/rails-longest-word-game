@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if @result == 'not found' %>
+<p>Sorry but <strong><%= params[:word].upcase %></strong> can't be built out of <%= params[:grid] %> </p>
+
+<% elsif @result == 'not english' %>
+<p>Sorry but <strong><%= params[:word].upcase %></strong> does not seem to be a valid English word</p>
+
+<% else %>
+<p><strong>Congratulations!</strong> <%= params[:word].upcase %> is a valid English word!</p>
+<% end %>
+
+<%= link_to 'Play again', new_path %>
